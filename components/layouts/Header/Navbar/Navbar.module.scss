@@ -1,0 +1,23 @@
+@import 'styles/config.scss';
+.nav {
+  margin-left: 0.75rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 1rem;
+  @include laptop{
+    margin-top: 0;
+  }
+  & a {
+    font-size: 1.1rem;
+    margin-right: 1.25rem;
+    color: $gray2;
+    font-family: $main-font;
+    &:last-of-type{
+      margin-right: 0;
+    }
+    &:hover{
+      color: #222222;
+    }
+  }
+}

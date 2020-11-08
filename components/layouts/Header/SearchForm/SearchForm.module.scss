@@ -1,0 +1,27 @@
+@import 'styles/config.scss';
+
+.form{
+  position: relative;
+}
+.inputText{
+  border: 1px solid $gray3;
+  padding: 0.75rem;
+  padding-right: 3rem;
+  max-width: 200px;
+}
+.button{
+  height: 3rem;
+  width: 3rem;
+  display: block;
+  background-size: 3rem;
+  background: url('/static/img/buscar.png') center center/cover;
+  background-repeat: no-repeat;
+  outline: none;
+  position: absolute;
+  right: 0.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  &:hover{
+    cursor: pointer;
+  }
+}

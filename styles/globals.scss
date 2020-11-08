@@ -1,0 +1,59 @@
+:root {
+  --gray: #3d3d3d;
+  --gray2: #6f6f6f;
+  --gray3: #e1e1e1;
+  --orange: #cc4d29;
+  --red: #cd0001;
+
+  --main-font: 'PT Sans', sans-serif;
+  --title-font: 'Roboto Slab', serif;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html{
+    font-size: 16px; 
+}
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-family: var(--main-font);
+}
+
+#__next{
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+h1,h2,h3{
+  margin: 0 0 1.5rem 0;
+  font-family: var(--title-font);
+  font-weight: 700;
+}
+
+ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+button{
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  line-height: 1.5;
+  background-color: transparent;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+

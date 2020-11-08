@@ -1,0 +1,13 @@
+@import 'styles/ui/Button.module.scss';
+.userPanel{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  @include laptop{
+    margin-top: 0;
+  }
+  p{
+    margin-right: 1.25rem;
+  }
+}

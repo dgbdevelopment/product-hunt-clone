@@ -1,0 +1,36 @@
+@import 'styles/config.scss';
+
+.btn{
+  font-weight: 700;
+  text-transform: uppercase;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  margin: 0 0.5rem;
+  border-radius: 5px;
+  transition: background-color 0.3s linear;
+  &:hover{
+    // filter: invert(10%);
+    cursor: pointer;
+  }
+  &-blank{
+    @extend .btn;
+    border: 1px solid #d1d1d1;
+    &:hover{
+      background-color: $gray3;
+    }
+  }
+  &-orange{
+    @extend .btn;
+    background-color: $orange;
+    color: #fff;
+    &:hover{
+      background-color: $red;
+    }
+  }
+  &-block{
+  display: block;
+  margin: 0;
+  text-align: center;
+  width: 100%;
+  }
+}

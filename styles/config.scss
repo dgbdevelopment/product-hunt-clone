@@ -1,0 +1,56 @@
+/*-------------- FONTS -------------------*/
+
+  $title-font: var(--title-font);
+  $main-font: var(--main-font);
+
+/*-------------- END OF FONTS -------------------*/
+
+/*-------------- COLOURS -------------------*/
+
+  $gray: var(--gray);
+  $gray2: var(--gray2);
+  $gray3: var(--gray3);
+  $orange: var(--orange);
+  $red: var(--red);
+
+/*-------------- END OF COLOURS -------------------*/
+
+/* ------------- BREAKPOINTS -------------*/
+
+$small-mobile: 360px;
+$mobile: 361px;
+$tablet: 768px;
+$laptop: 1024px;
+$desktop: 1450px;
+
+@mixin small-mobile {
+  @media screen and (max-width: $small-mobile) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (min-width: $mobile) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (min-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media screen and (min-width: $laptop) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: $desktop) {
+    @content;
+  }
+}
+
+/*--------------- END OF BREAKPOINTS ------------*/

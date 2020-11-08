@@ -1,0 +1,40 @@
+@import './Button.module.scss';
+
+.form{
+  display: block;
+  margin: 3rem auto;
+  width: 100%;
+  max-width: 600px;
+  padding: 1.5rem;
+  & h1{
+  text-align: center;
+  }
+}
+
+.formGroup{
+  margin-bottom: 1.5rem;
+  & label, & input{
+    display: block;
+    width: 100%;
+  }
+  & label{
+    margin-bottom: .5rem;
+    font-size: 0.8rem;
+  }
+  & input{
+  padding: 0.5rem 0.75rem;
+  border: 1px solid $gray3;
+  outline: none;
+  border-radius: 5px;
+  }
+  & p {
+    font-weight: 700;
+    color: $red;
+    font-size: 0.8rem;
+  }
+
+}
+
+.submit{
+  margin-top: 2rem;
+}
