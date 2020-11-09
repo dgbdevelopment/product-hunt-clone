@@ -48,7 +48,7 @@ export default function Register() {
             name="username"
             id="username"
             placeholder="Nombre"
-            autoComplete="current-username"
+            autoComplete="new-username"
             onChange={handleChange}
             onBlur={handleBlur}
             value={username}
@@ -62,7 +62,7 @@ export default function Register() {
             name="email"
             id="email"
             placeholder="Email"
-            autoComplete="current-email"
+            autoComplete="new-email"
             onChange={handleChange}
             onBlur={handleBlur}
             value={email}
@@ -76,7 +76,7 @@ export default function Register() {
             name="password"
             id="password"
             placeholder="Contraseña"
-            autoComplete="current-password"
+            autoComplete="new-password"
             onChange={handleChange}
             onBlur={handleBlur}
             value={password}

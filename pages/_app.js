@@ -1,7 +1,9 @@
-import 'styles/globals.scss';
-import {Firebase} from '../fb/index';
+import "styles/globals.scss";
+import { Firebase } from "../fb/index";
 
 function MyApp({ Component, pageProps }) {
+
+
   return (
     <Firebase>
       <Component {...pageProps} />
@@ -9,4 +11,4 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
-export default MyApp
+export default MyApp;

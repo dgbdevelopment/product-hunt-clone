@@ -1,23 +1,33 @@
 import styles from "./UserPanel.module.scss";
 import Link from "next/link";
+import { useContext } from "react";
+import { firebaseContext } from "fb/index";
+
 
 const UserPanel = () => {
-  const user = false;
 
-  const handleClick = e => console.log('Has cerrado sesión')
+  const { user, firebase } = useContext(firebaseContext);
+  
+  const handleClick = async e => {
+    try {
+      await firebase.logOut();
+    } catch (error) {
+      console.error('Hubo un error al cerra sesión:', error.message)
+    }
+  }
   
   return (
     <div className={styles.userPanel}>
       {user ? (
         <>
-          <p>Hola: David</p>
-          <button type="button" className={styles["btn-orange"]}>
+          <p>Hola: {user.displayName}</p>
+          <button type="button" className={styles["btn-orange"]} onClick={handleClick}>
             Cerrar
           </button>
         </>
       ) : (
         <>
-          <Link href="/">
+          <Link href="/login">
             <a className={styles["btn-blank"]}>
               Login
             </a>

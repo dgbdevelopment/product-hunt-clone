@@ -1,10 +1,14 @@
+import {useContext} from 'react';
 import SearchForm from 'components/layouts/Header/SearchForm';
 import styles from './Header.module.scss';
 import Link from "next/link";
 import Navbar from './Navbar';
 import UserPanel from './UserPanel';
 
+
 const Header = () => {
+
+
   return (
     <header className={styles.header}>
       <div className={styles.header__container}>
