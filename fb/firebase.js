@@ -28,6 +28,22 @@ class Firebase {
   addProduct = async (product) => {
     await this.db.collection('products').add(product);    
   }
+  getProducts = (orderBy, order) => {    
+    return new Promise((resolve, reject) => {
+      this.db
+        .collection("products")
+        .orderBy(orderBy, order)
+        .onSnapshot((snapshot) => {
+          if (snapshot.docs.length === 0)
+            reject(new Error("No hay productos actualemnte en la BDD"));
+          resolve(
+            snapshot.docs.map((doc) => {
+              return { id: doc.id, ...doc.data() };
+            })
+          );
+        });
+    });    
+  }
 }
 
 const firebase = new Firebase();

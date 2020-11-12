@@ -1,0 +1,72 @@
+@import "styles/config.scss";
+
+.productContainer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: left;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border-bottom: 2px solid $gray3;
+  @media (min-width: 430px){
+    flex-direction: row;
+    align-items: center;
+  }
+  .leftSide {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-right: 0;
+    @media (min-width: 430px){
+      margin-right: 2rem;
+    }
+    .imgContainer {
+      flex: 0 0 100%;
+      margin-right: 0;
+      @media (min-width: 430px){
+        flex: 0 0 200px;
+        margin-right: 2rem;
+      }
+    }
+    .infoContainer {
+      flex: 1 0 200px;
+      margin: 1.25rem 0;
+      h1 {
+        font-size: 1.25rem;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      .comments {
+        padding: 0.25rem 0.75rem;
+        border: 1px solid $gray3;
+        display: flex;
+        align-items: center;
+        width: fit-content;
+        img {
+          width: 1.25rem;
+          display: inline;
+          margin-right: 1rem;
+        }
+        span {
+          font-weight: 700;
+        }
+      }
+    }
+  }
+  .rightSide {
+    width: 100px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 150px;
+    border: 1px solid $gray3;
+    user-select: none;
+    img{
+      width: 2rem;      
+    }
+  }
+}

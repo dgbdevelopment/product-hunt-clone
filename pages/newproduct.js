@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import Router from "next/router";
 import Layout from "../components/layouts/Layout";
 import styles from "styles/ui/Form.module.scss";
@@ -11,7 +11,7 @@ export default function NewProduct() {
     productname: "",
     company: "",
     url: "",
-    imageURL: '',
+    imageURL: "",
     description: "",
   };
 
@@ -21,29 +21,34 @@ export default function NewProduct() {
     isUploading: false,
     progress: 0,
     error: false,
-    filename: '',
-    url: ''
-  })
-  const handleUploadStart = () => setImageState({...imageState, isUploading: true, progress: 0 });
-  const handleProgress = (progress) => setImageState({...imageState, progress });
+    filename: "",
+    url: "",
+  });
+  const handleUploadStart = () =>
+    setImageState({ ...imageState, isUploading: true, progress: 0 });
+  const handleProgress = (progress) =>
+    setImageState({ ...imageState, progress });
   const handleUploadError = (error) => {
-    setImageState({...imageState, isUploading: false });
+    setImageState({ ...imageState, isUploading: false });
     console.error(error);
   };
   const handleUploadSuccess = (filename) => {
-    setImageState({...imageState, filename, progress: 100, isUploading: false });
-    firebase
-      .storage
+    setImageState({
+      ...imageState,
+      filename,
+      progress: 100,
+      isUploading: false,
+    });
+    firebase.storage
       .ref("products")
       .child(filename)
       .getDownloadURL()
       .then((url) => {
-        setImageState({ ...imageState, url, filename })
+        setImageState({ ...imageState, url, filename });
       });
   };
 
-  const { firebase } = useContext(firebaseContext);
-
+  const { firebase, user } = useContext(firebaseContext);
   const {
     values,
     errors,
@@ -59,20 +64,29 @@ export default function NewProduct() {
   const product = {
     ...values,
     comments: [],
-    votes: 0,
+    votes: { count: 0, voters: [] },
     created_at: Date.now(),
+    
   };
 
   async function createProduct() {
     try {
-      await firebase.addProduct({ ...product, imageURL: imageState.url, filename: imageState.filename});
+      await firebase.addProduct({
+        ...product,
+        imageURL: imageState.url,
+        filename: imageState.filename,
+        created_by: { id: user.uid, username: user.displayName },
+      });
       setErrorMsg(false);
       setValues(initialState);
       Router.push("/");
     } catch (error) {
       setErrorMsg("Hubo un error: " + error.message);
     }
-  };
+  }
+  useEffect(() => {
+    if (!user) Router.push("/login");
+  }, []);
 
   return (
     <Layout title={"Nuevo Producto"}>

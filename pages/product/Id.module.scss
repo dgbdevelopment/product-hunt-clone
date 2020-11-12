@@ -1,0 +1,65 @@
+@import "styles/ui/Form.module.scss";
+
+.title {
+  text-align: center;
+}
+.mainContainer {
+  margin-top: 3rem;
+  @include tablet {
+    display: grid;
+    column-gap: 2rem;
+    grid-template-columns: 2fr 1fr;
+  }
+  .infoZone {
+    padding: 1rem;
+    @include tablet {
+      padding: 2rem;
+    }
+    img {
+      border-radius: 5px;
+      width: 100%;
+    }
+  }
+  .voteZone {
+    padding: 1rem;
+    @include tablet {
+      padding: 2rem;
+    }
+    & > * {
+      margin-bottom: 2rem;
+    }
+    .center {
+      text-align: center;
+    }
+    p:first-of-type {
+      margin: 0;
+    }
+    p span {
+      font-weight: 700;
+    }
+  }
+}
+.commentsZone {
+  padding: 1rem;
+  margin-top: -4rem;
+
+  @include tablet {
+    padding: 2rem;
+  }
+
+  .form {
+    padding: 0;
+    max-width: 100%;
+    .formGroup {
+      margin-bottom: 0;
+      textarea {
+        width: 100%;
+        height: 200px;
+        padding: 1rem;
+      }
+      button {
+        margin-top: 2rem;
+      }
+    }
+  }
+}

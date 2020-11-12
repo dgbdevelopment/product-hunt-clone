@@ -1,0 +1,31 @@
+@import "styles/config.scss";
+
+.commentContainer {
+  border: 1px solid $gray3;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 5px;
+  .authorContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    span:first-of-type{
+      margin-right: 2rem;
+    }
+    .author {
+      font-style: italic;
+      font-weight: 700;
+    }
+    .owner{
+      padding: 0.5rem 1rem;
+      border: 1px solid $gray3;
+      font-weight: 700;
+      border-radius: 5px;
+      text-transform: uppercase;
+    }
+  }
+  .comment {
+    quotes: "\201C";
+  }
+}

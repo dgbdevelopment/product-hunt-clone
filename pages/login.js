@@ -37,7 +37,7 @@ export default function Login() {
   const { email, password } = values;
 
   return (
-    <Layout title={"Registro"}>
+    <Layout title={"Login"}>
       <form className={styles.form} onSubmit={handleSubmit} noValidate>
         <h1>Iniciar Sesión</h1>
         <div className={styles.formGroup}>
